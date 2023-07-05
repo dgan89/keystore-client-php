@@ -23,6 +23,8 @@ Keystore API Client
 ```php
 $key = '<secret>';
 
+// Установка базового адреса
+HttpGuzzleClient::$baseUrl = 'https://base.url';
 // Создание объекта аутентификации
 $auth = new AuthApiKey($key);
 // Создание HTTP клиента
