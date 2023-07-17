@@ -50,6 +50,11 @@ class ProductSearchParams extends PaginationParams
     protected $onlyInStock;
 
     /**
+     * @var bool|null
+     */
+    protected $onlyExclusive;
+
+    /**
      * @param array $ids
      * @return ProductSearchParams
      */
@@ -125,6 +130,18 @@ class ProductSearchParams extends PaginationParams
     {
         Assert::boolean("Only In Stock", $onlyInStock);
         $this->onlyInStock = $onlyInStock;
+
+        return $this;
+    }
+
+    /**
+     * @param bool|null $onlyExclusive
+     * @return ProductSearchParams
+     */
+    public function setOnlyExclusive($onlyExclusive)
+    {
+        Assert::boolean("Only Exclusive", $onlyExclusive);
+        $this->onlyExclusive = $onlyExclusive;
 
         return $this;
     }
